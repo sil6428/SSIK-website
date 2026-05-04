@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+
 <style>
   .page-hero {
     padding: calc(var(--nav-h) + 4.5rem) 2rem 4.5rem;
@@ -15,18 +16,41 @@
     position: relative;
     overflow: hidden;
   }
+
   .page-hero-grid {
-    position: absolute; inset: 0;
-    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
     background-size: 48px 48px;
     opacity: 0.5;
     mask-image: radial-gradient(ellipse 60% 80% at 80% 50%, transparent 40%, black 100%);
   }
-  .page-hero-inner { position: relative; z-index: 1; max-width: var(--max-w); margin: 0 auto; }
-  .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,3.8rem); font-weight: 700; color: var(--navy); line-height: 1.1; margin-bottom: 1rem; }
-  .page-hero p { font-size: 1rem; color: var(--slate); max-width: 560px; line-height: 1.85; }
 
-  /* Quote notice */
+  .page-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+
+  .page-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem,5vw,3.8rem);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .page-hero p {
+    font-size: 1rem;
+    color: var(--slate);
+    max-width: 560px;
+    line-height: 1.85;
+  }
+
   .quote-notice {
     background: var(--navy);
     color: var(--white);
@@ -36,17 +60,28 @@
     gap: 1.5rem;
     flex-wrap: wrap;
   }
-  .quote-notice p { font-size: 0.9rem; color: rgba(255,255,255,0.75); flex: 1; }
-  .quote-notice p strong { color: var(--white); }
 
-  /* Services grid */
-  .services-main { background: var(--white); }
+  .quote-notice p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+    flex: 1;
+  }
+
+  .quote-notice p strong {
+    color: var(--white);
+  }
+
+  .services-main {
+    background: var(--white);
+  }
+
   .svc-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
   }
+
   .svc-card {
     border: 1.5px solid var(--border);
     background: var(--white);
@@ -55,11 +90,13 @@
     transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
     position: relative;
   }
+
   .svc-card:hover {
     border-color: var(--navy);
     box-shadow: 0 12px 36px rgba(15,30,61,0.1);
     transform: translateY(-4px);
   }
+
   .svc-card-num {
     font-family: var(--font-mono);
     font-size: 0.65rem;
@@ -67,9 +104,26 @@
     color: var(--gold);
     margin-bottom: 1rem;
   }
-  .svc-card h3 { font-family: var(--font-display); font-size: 1.45rem; color: var(--navy); margin-bottom: 0.75rem; }
-  .svc-card p { font-size: 0.9rem; color: var(--slate); line-height: 1.8; margin-bottom: 1.5rem; }
-  .svc-deliverables { list-style: none; margin-bottom: 1.75rem; }
+
+  .svc-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .svc-card p {
+    font-size: 0.9rem;
+    color: var(--slate);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .svc-deliverables {
+    list-style: none;
+    margin-bottom: 1.75rem;
+  }
+
   .svc-deliverables li {
     font-size: 0.84rem;
     color: var(--slate);
@@ -79,54 +133,118 @@
     align-items: flex-start;
     gap: 0.6rem;
   }
-  .svc-deliverables li:last-child { border-bottom: none; }
-  .svc-deliverables li::before { content: '—'; color: var(--gold); font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; }
-  .quote-tag {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    font-family: var(--font-mono); font-size: 0.63rem;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--gold); border: 1px solid var(--gold-border);
-    padding: 0.3rem 0.75rem; background: var(--gold-pale);
-    transition: background 0.2s;
-  }
-  .svc-card:hover .quote-tag { background: rgba(176,125,46,0.15); }
 
-  /* Process section */
-  #process { background: var(--off-white); }
-  .process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 3rem; position: relative; }
+  .svc-deliverables li:last-child {
+    border-bottom: none;
+  }
+
+  .svc-deliverables li::before {
+    content: '—';
+    color: var(--gold);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .quote-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.63rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold-border);
+    padding: 0.3rem 0.75rem;
+    background: var(--gold-pale);
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .quote-tag:hover {
+    background: rgba(176,125,46,0.15);
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  #process {
+    background: var(--off-white);
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 0;
+    margin-top: 3rem;
+    position: relative;
+  }
+
   .process-steps::before {
     content: '';
     position: absolute;
-    top: 2.5rem; left: 10%; right: 10%;
+    top: 2.5rem;
+    left: 10%;
+    right: 10%;
     height: 1px;
     background: var(--border-dark);
     z-index: 0;
   }
-  .step { text-align: center; padding: 0 1.5rem; position: relative; z-index: 1; }
+
+  .step {
+    text-align: center;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
   .step-circle {
-    width: 48px; height: 48px;
+    width: 48px;
+    height: 48px;
     background: var(--white);
     border: 2px solid var(--navy);
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto 1.25rem;
     font-family: var(--font-mono);
     font-size: 0.78rem;
     font-weight: 500;
     color: var(--navy);
   }
-  .step h4 { font-family: var(--font-display); font-size: 1rem; color: var(--navy); margin-bottom: 0.4rem; }
-  .step p { font-size: 0.82rem; color: var(--slate); line-height: 1.6; }
+
+  .step h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .step p {
+    font-size: 0.82rem;
+    color: var(--slate);
+    line-height: 1.6;
+  }
 
   @media (max-width: 720px) {
-    .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .process-steps::before { display: none; }
+    .process-steps {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .process-steps::before {
+      display: none;
+    }
   }
+
   @media (max-width: 460px) {
-    .process-steps { grid-template-columns: 1fr; }
+    .process-steps {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 </head>
+
 <body>
 
 <nav id="navbar">
@@ -137,6 +255,7 @@
       <div class="nav-logo-sub">IT Consulting & Solutions</div>
     </div>
   </a>
+
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html" class="active">Services</a></li>
@@ -144,15 +263,21 @@
     <li><a href="projects.html">Projects</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
+
   <a href="booking.html" class="btn btn-primary" style="font-size:0.78rem;padding:0.65rem 1.5rem;">Book a Consultation</a>
+
   <button class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
+
 <div class="mobile-menu">
   <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')">✕</button>
-  <a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a>
-  <a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
   <a href="booking.html" class="btn btn-primary">Book Consultation</a>
 </div>
 
@@ -166,11 +291,10 @@
 </div>
 
 <div class="quote-notice">
-  <p><strong>Pricing is available upon request.</strong> All services are custom-scoped. Contact us or book a free discovery call to receive a tailored quote.</p>
-  <a href="booking.html" class="btn btn-gold" style="white-space:nowrap;font-size:0.78rem;padding:0.65rem 1.4rem;">Request a Quote</a>
+  <p><strong>Free consultation available.</strong> Pricing is available upon request because every service is custom-scoped to your business needs.</p>
+  <a href="booking.html?service=Multiple%20Services%20%2F%20Not%20Sure" class="btn btn-gold" style="white-space:nowrap;font-size:0.78rem;padding:0.65rem 1.4rem;">Request a Quote</a>
 </div>
 
-<!-- SERVICES -->
 <section class="services-main section">
   <div class="container">
     <div class="section-label">Services</div>
@@ -182,114 +306,127 @@
       <div class="svc-card fade-in">
         <div class="svc-card-num">01 — Security Auditing</div>
         <h3>IT Security Auditing</h3>
-        <p>Comprehensive security assessments that identify vulnerabilities, evaluate your existing controls, and produce a prioritized remediation roadmap.</p>
+        <p>Comprehensive security assessments that identify vulnerabilities, evaluate existing controls, and produce a prioritized remediation roadmap.</p>
         <ul class="svc-deliverables">
-          <li>Network & endpoint security review</li>
+          <li>Network and endpoint security review</li>
           <li>Access control and privilege analysis</li>
           <li>Security control gap assessment</li>
-          <li>Executive summary & technical report</li>
-          <li>Remediation roadmap with timelines</li>
+          <li>Executive-ready findings report</li>
         </ul>
-        <span class="quote-tag">→ Request a Quote</span>
+        <a href="booking.html?service=IT%20Security%20Auditing" class="quote-tag">Request a Quote →</a>
       </div>
 
       <div class="svc-card fade-in delay-1">
         <div class="svc-card-num">02 — Penetration Testing</div>
         <h3>Penetration Testing</h3>
-        <p>Controlled, simulated attacks to uncover exploitable weaknesses in your environment before real adversaries can leverage them.</p>
+        <p>Controlled testing to uncover security weaknesses before attackers can exploit them, with clear findings and practical next steps.</p>
         <ul class="svc-deliverables">
-          <li>External and internal network testing</li>
-          <li>Web application penetration testing</li>
-          <li>Social engineering assessment</li>
-          <li>Wireless and physical security testing</li>
-          <li>Detailed findings & proof-of-concept</li>
+          <li>External and internal testing options</li>
+          <li>Web application security testing</li>
+          <li>Risk-rated vulnerability findings</li>
+          <li>Remediation guidance and retesting options</li>
         </ul>
-        <span class="quote-tag">→ Request a Quote</span>
+        <a href="booking.html?service=Penetration%20Testing" class="quote-tag">Request a Quote →</a>
       </div>
 
       <div class="svc-card fade-in delay-2">
         <div class="svc-card-num">03 — Risk Management</div>
-        <h3>IT Risk Management</h3>
-        <p>Structured frameworks to identify, quantify, and mitigate technology risks in alignment with your organization's strategic objectives.</p>
+        <h3>Risk Management</h3>
+        <p>Structured risk identification and mitigation planning aligned with your operations, compliance goals, and business priorities.</p>
         <ul class="svc-deliverables">
           <li>Risk register development</li>
-          <li>Threat modelling & likelihood analysis</li>
-          <li>Business impact assessments</li>
-          <li>Risk treatment planning</li>
-          <li>Ongoing risk monitoring support</li>
+          <li>Threat and impact assessment</li>
+          <li>Mitigation planning</li>
+          <li>Policy and governance recommendations</li>
         </ul>
-        <span class="quote-tag">→ Request a Quote</span>
+        <a href="booking.html?service=Risk%20Management" class="quote-tag">Request a Quote →</a>
       </div>
 
       <div class="svc-card fade-in">
-        <div class="svc-card-num">04 — Infrastructure</div>
+        <div class="svc-card-num">04 — Infrastructure Consulting</div>
         <h3>Infrastructure Consulting</h3>
-        <p>Architecture review and strategic guidance for on-premise, cloud, and hybrid environments — built for resilience and long-term efficiency.</p>
+        <p>Practical architecture and modernization guidance for secure, reliable, and scalable IT environments.</p>
         <ul class="svc-deliverables">
-          <li>Cloud security architecture review</li>
-          <li>Network design and segmentation</li>
-          <li>Disaster recovery planning</li>
-          <li>Vendor security evaluation</li>
-          <li>Migration risk assessment</li>
+          <li>Network and systems architecture review</li>
+          <li>Cloud and hybrid environment guidance</li>
+          <li>Availability and resilience planning</li>
+          <li>Infrastructure improvement roadmap</li>
         </ul>
-        <span class="quote-tag">→ Request a Quote</span>
+        <a href="booking.html?service=Infrastructure%20Consulting" class="quote-tag">Request a Quote →</a>
       </div>
 
       <div class="svc-card fade-in delay-1">
         <div class="svc-card-num">05 — Policy & Advisory</div>
         <h3>IT Policy & Advisory</h3>
-        <p>Develop, audit, and implement security policies and governance frameworks that protect your organization and satisfy stakeholder requirements.</p>
+        <p>Clear policies, governance support, and advisory services that help your organization operate more securely and consistently.</p>
         <ul class="svc-deliverables">
-          <li>Information security policy development</li>
-          <li>Incident response plan creation</li>
-          <li>Employee security awareness training</li>
-          <li>Third-party vendor policy review</li>
-          <li>Governance framework design</li>
+          <li>Security policy creation and review</li>
+          <li>Acceptable use and access policies</li>
+          <li>Incident response planning</li>
+          <li>Leadership advisory and documentation</li>
         </ul>
-        <span class="quote-tag">→ Request a Quote</span>
+        <a href="booking.html?service=IT%20Policy%20%26%20Advisory" class="quote-tag">Request a Quote →</a>
+      </div>
+
+      <div class="svc-card fade-in delay-2">
+        <div class="svc-card-num">06 — Unsure Where to Start?</div>
+        <h3>Free Consultation</h3>
+        <p>Not sure which service fits your needs? Book a free consultation and we’ll help identify the right next step.</p>
+        <ul class="svc-deliverables">
+          <li>30-minute discovery call</li>
+          <li>No obligation</li>
+          <li>Initial needs assessment</li>
+          <li>Recommended next steps</li>
+        </ul>
+        <a href="booking.html?service=Multiple%20Services%20%2F%20Not%20Sure" class="quote-tag">Book Free Consultation →</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
 <section id="process" class="section">
   <div class="container">
-    <div class="section-label">How We Work</div>
-    <h2 class="section-title">Our Engagement Process</h2>
-    <div class="rule"></div>
+    <div class="section-label">Process</div>
+    <h2 class="section-title">How Engagements Work</h2>
+    <p class="section-sub">A simple, professional process designed to keep expectations clear from the first conversation to delivery.</p>
+
     <div class="process-steps">
       <div class="step fade-in">
         <div class="step-circle">01</div>
-        <h4>Discovery Call</h4>
-        <p>Complimentary 30-minute conversation to understand your environment and challenges.</p>
+        <h4>Discovery</h4>
+        <p>We learn about your organization, goals, and current IT challenges.</p>
       </div>
+
       <div class="step fade-in delay-1">
         <div class="step-circle">02</div>
-        <h4>Scoping & Quote</h4>
-        <p>We define the engagement scope, timeline, and deliverables — then provide a transparent quote.</p>
+        <h4>Scope</h4>
+        <p>We define the work, timeline, deliverables, and pricing clearly.</p>
       </div>
+
       <div class="step fade-in delay-2">
         <div class="step-circle">03</div>
-        <h4>Engagement</h4>
-        <p>Our team executes the work with precision, keeping you informed at every milestone.</p>
+        <h4>Execute</h4>
+        <p>We complete the engagement using a structured and confidential approach.</p>
       </div>
+
       <div class="step fade-in delay-3">
         <div class="step-circle">04</div>
-        <h4>Report & Support</h4>
-        <p>Detailed findings delivered with a debrief session and ongoing remediation support.</p>
+        <h4>Deliver</h4>
+        <p>You receive clear findings, recommendations, and practical next steps.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section style="background:var(--navy);padding:4.5rem 2rem;text-align:center;">
-  <div class="container">
-    <h2 style="font-family:var(--font-display);font-size:clamp(1.6rem,3.5vw,2.5rem);color:var(--white);margin-bottom:1rem;font-weight:700;">Have a specific need in mind?</h2>
-    <p style="color:rgba(255,255,255,0.55);max-width:440px;margin:0 auto 2rem;font-size:0.95rem;">We're happy to discuss custom engagements. Book a free call and let's talk through your requirements.</p>
-    <a href="booking.html" class="btn btn-gold">Book a Free Consultation</a>
+<section class="section" style="background:var(--navy);color:var(--white);">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+    <div>
+      <div class="section-label" style="color:var(--gold);">Ready to Begin?</div>
+      <h2 class="section-title" style="color:var(--white);margin-bottom:0.5rem;">Book Your Free Consultation</h2>
+      <p style="color:rgba(255,255,255,0.65);max-width:560px;">Tell us what you need help with and we’ll respond within one business day.</p>
+    </div>
+    <a href="booking.html?service=Multiple%20Services%20%2F%20Not%20Sure" class="btn btn-gold">Book Now →</a>
   </div>
 </section>
 
@@ -299,10 +436,15 @@
       <div class="footer-logo">SSIK IT Consulting & Solutions</div>
       <div style="font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;">Secure Solutions in Information & Knowledge</div>
     </div>
+
     <div class="footer-copy">© 2025 SSIK IT Consulting & Solutions. All rights reserved.</div>
+
     <ul class="footer-links">
-      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li><li><a href="booking.html">Book</a></li><li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="booking.html">Book</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 </footer>
@@ -310,13 +452,20 @@
 <script>
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+
     document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight - 60) el.classList.add('visible');
+      if (el.getBoundingClientRect().top < window.innerHeight - 60) {
+        el.classList.add('visible');
+      }
     });
   });
+
   document.querySelectorAll('.fade-in').forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 60) el.classList.add('visible');
+    if (el.getBoundingClientRect().top < window.innerHeight - 60) {
+      el.classList.add('visible');
+    }
   });
 </script>
+
 </body>
 </html>
