@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book a Consultation — SSIK IT Consulting & Solutions</title>
+<title>Book a Free Consultation — SSIK IT Consulting & Solutions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
@@ -11,35 +11,115 @@
   .page-hero {
     padding: calc(var(--nav-h) + 4.5rem) 2rem 4.5rem;
     background: var(--navy);
-    position: relative; overflow: hidden;
+    position: relative;
+    overflow: hidden;
   }
+
   .page-hero-grid {
-    position: absolute; inset: 0;
-    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
     background-size: 48px 48px;
     mask-image: radial-gradient(ellipse 60% 80% at 80% 50%, transparent 30%, black 100%);
   }
-  .page-hero-inner { position: relative; z-index: 1; max-width: var(--max-w); margin: 0 auto; }
-  .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,3.8rem); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 1rem; }
-  .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.6); max-width: 560px; line-height: 1.85; }
-  .page-hero .section-label { color: var(--gold); }
 
-  /* Booking section */
-  #booking { background: var(--white); }
-  .booking-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
+  .page-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
 
-  .booking-info { padding-top: 0.5rem; }
-  .booking-info h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--navy); margin-bottom: 1rem; }
-  .booking-info p { font-size: 0.92rem; color: var(--slate); line-height: 1.85; margin-bottom: 1.5rem; }
+  .page-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem,5vw,3.8rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
 
-  .booking-list { list-style: none; margin-bottom: 2rem; }
+  .page-hero p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.68);
+    max-width: 600px;
+    line-height: 1.85;
+  }
+
+  .page-hero .section-label {
+    color: var(--gold);
+  }
+
+  .free-consultation-tag {
+    display: inline-flex;
+    margin-top: 1.2rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--gold-border);
+    background: rgba(176,125,46,0.12);
+    color: var(--gold);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  #booking {
+    background: var(--white);
+  }
+
+  .booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .booking-info {
+    padding-top: 0.5rem;
+  }
+
+  .booking-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+
+  .booking-info p {
+    font-size: 0.92rem;
+    color: var(--slate);
+    line-height: 1.85;
+    margin-bottom: 1.5rem;
+  }
+
+  .booking-list {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
   .booking-list li {
-    display: flex; align-items: flex-start; gap: 0.75rem;
-    font-size: 0.88rem; color: var(--slate); padding: 0.6rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.88rem;
+    color: var(--slate);
+    padding: 0.6rem 0;
     border-bottom: 1px solid var(--border);
   }
-  .booking-list li:last-child { border-bottom: none; }
-  .booking-list li::before { content: '→'; color: var(--gold); font-size: 0.85rem; flex-shrink: 0; margin-top: 1px; }
+
+  .booking-list li:last-child {
+    border-bottom: none;
+  }
+
+  .booking-list li::before {
+    content: '→';
+    color: var(--gold);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
 
   .booking-callout {
     background: var(--off-white);
@@ -48,16 +128,36 @@
     padding: 1.25rem 1.5rem;
     border-radius: 2px;
   }
+
   .booking-callout-label {
-    font-family: var(--font-mono); font-size: 0.62rem;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
   }
-  .booking-callout p { font-size: 0.88rem; color: var(--slate); margin: 0; line-height: 1.6; }
-  .booking-callout strong { color: var(--navy); }
+
+  .booking-callout p {
+    font-size: 0.88rem;
+    color: var(--slate);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .booking-callout strong {
+    color: var(--navy);
+  }
+
+  .form-card {
+    box-shadow: 0 14px 38px rgba(15,30,61,0.08);
+  }
 
   @media (max-width: 860px) {
-    .booking-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .booking-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
   }
 </style>
 </head>
@@ -71,6 +171,7 @@
       <div class="nav-logo-sub">IT Consulting & Solutions</div>
     </div>
   </a>
+
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
@@ -78,15 +179,21 @@
     <li><a href="projects.html">Projects</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
+
   <a href="booking.html" class="btn btn-primary active" style="font-size:0.78rem;padding:0.65rem 1.5rem;">Book a Consultation</a>
+
   <button class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
+
 <div class="mobile-menu">
   <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')">✕</button>
-  <a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a>
-  <a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
   <a href="booking.html" class="btn btn-primary">Book Consultation</a>
 </div>
 
@@ -94,8 +201,9 @@
   <div class="page-hero-grid"></div>
   <div class="page-hero-inner">
     <div class="section-label">Get Started</div>
-    <h1>Book a Consultation</h1>
-    <p>Schedule a complimentary discovery call with one of our consultants. No obligation — just an honest conversation about your IT security needs.</p>
+    <h1>Book a Free Consultation</h1>
+    <p>Schedule a complimentary discovery call with SSIK. No obligation — just a focused conversation about your IT security, risk, infrastructure, or advisory needs.</p>
+    <div class="free-consultation-tag">Free Consultation Available</div>
   </div>
 </div>
 
@@ -103,16 +211,15 @@
   <div class="container">
     <div class="booking-grid">
 
-      <!-- Info column -->
       <div class="booking-info fade-in">
         <h3>What to Expect</h3>
-        <p>Your initial consultation is completely free. We'll take the time to understand your organization, your current security posture, and what you're trying to achieve. From there, we'll provide a scoped proposal with transparent pricing.</p>
+        <p>Your initial consultation is completely free. We'll learn about your organization, your current security posture, and what you're trying to achieve. From there, we can provide a scoped proposal with transparent pricing.</p>
 
         <ul class="booking-list">
-          <li>30-minute video or phone call with a senior consultant</li>
-          <li>All discussions are strictly confidential</li>
-          <li>No pressure, no commitment required</li>
-          <li>Scoped proposal and quote provided within 48 hours</li>
+          <li>30-minute phone or video consultation</li>
+          <li>Confidential discussion about your needs</li>
+          <li>No pressure and no commitment required</li>
+          <li>Scoped proposal and quote provided after review</li>
           <li>Available for Canadian and international clients</li>
         </ul>
 
@@ -122,37 +229,46 @@
         </div>
       </div>
 
-      <!-- Form -->
       <div class="fade-in delay-1">
         <div class="form-card">
-          <div id="booking-form">
+          <form action="https://formsubmit.co/ssiksolutions@gmail.com" method="POST">
+
+            <input type="hidden" name="_subject" value="New Booking Request - SSIK Solutions">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
             <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--navy);margin-bottom:1.75rem;font-weight:700;">Booking Request</div>
 
             <div class="form-row">
               <div class="form-group">
                 <label for="b-fname">First Name *</label>
-                <input type="text" id="b-fname" placeholder="Jane">
+                <input type="text" id="b-fname" name="first_name" placeholder="Jane" required>
               </div>
               <div class="form-group">
                 <label for="b-lname">Last Name *</label>
-                <input type="text" id="b-lname" placeholder="Smith">
+                <input type="text" id="b-lname" name="last_name" placeholder="Smith" required>
               </div>
             </div>
 
             <div class="form-group">
               <label for="b-email">Business Email *</label>
-              <input type="email" id="b-email" placeholder="jane@company.com">
+              <input type="email" id="b-email" name="email" placeholder="jane@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="b-phone">Phone Number</label>
+              <input type="tel" id="b-phone" name="phone" placeholder="647-309-1927">
             </div>
 
             <div class="form-group">
               <label for="b-org">Organization *</label>
-              <input type="text" id="b-org" placeholder="Company / Organization Name">
+              <input type="text" id="b-org" name="organization" placeholder="Company / Organization Name" required>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label for="b-size">Organization Size</label>
-                <select id="b-size">
+                <select id="b-size" name="organization_size">
                   <option value="" disabled selected>Select range</option>
                   <option>1–25 employees</option>
                   <option>26–100 employees</option>
@@ -160,9 +276,10 @@
                   <option>500+ employees</option>
                 </select>
               </div>
+
               <div class="form-group">
                 <label for="b-industry">Industry</label>
-                <select id="b-industry">
+                <select id="b-industry" name="industry">
                   <option value="" disabled selected>Select industry</option>
                   <option>Finance / Banking</option>
                   <option>Healthcare</option>
@@ -179,11 +296,11 @@
 
             <div class="form-group">
               <label for="b-service">Service of Interest *</label>
-              <select id="b-service">
+              <select id="b-service" name="service" required>
                 <option value="" disabled selected>Select a service</option>
                 <option>IT Security Auditing</option>
                 <option>Penetration Testing</option>
-                <option>IT Risk Management</option>
+                <option>Risk Management</option>
                 <option>Infrastructure Consulting</option>
                 <option>IT Policy & Advisory</option>
                 <option>Multiple Services / Not Sure</option>
@@ -192,22 +309,18 @@
 
             <div class="form-group">
               <label for="b-date">Preferred Date</label>
-              <input type="date" id="b-date">
+              <input type="date" id="b-date" name="preferred_date">
             </div>
 
             <div class="form-group">
               <label for="b-notes">Tell Us More</label>
-              <textarea id="b-notes" placeholder="Briefly describe your current IT challenges or what you're hoping to achieve..."></textarea>
+              <textarea id="b-notes" name="message" placeholder="Briefly describe your current IT challenges or what you're hoping to achieve..."></textarea>
             </div>
 
-            <button class="btn btn-primary form-submit" onclick="submitBooking()">Submit Booking Request →</button>
-            <p class="form-note">By submitting you agree to our privacy policy. We never share your information.</p>
-          </div>
+            <button type="submit" class="btn btn-primary form-submit">Submit Booking Request →</button>
 
-          <div class="success-msg" id="booking-success">
-            ✓ Request Received
-            <span>We'll be in touch within one business day to confirm your consultation.</span>
-          </div>
+            <p class="form-note">By submitting, you agree to be contacted by SSIK Solutions. We never share your information.</p>
+          </form>
         </div>
       </div>
 
@@ -221,10 +334,15 @@
       <div class="footer-logo">SSIK IT Consulting & Solutions</div>
       <div style="font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;">Secure Solutions in Information & Knowledge</div>
     </div>
+
     <div class="footer-copy">© 2025 SSIK IT Consulting & Solutions. All rights reserved.</div>
+
     <ul class="footer-links">
-      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li><li><a href="booking.html">Book</a></li><li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="booking.html">Book</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 </footer>
@@ -232,27 +350,37 @@
 <script>
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+
     document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight - 60) el.classList.add('visible');
+      if (el.getBoundingClientRect().top < window.innerHeight - 60) {
+        el.classList.add('visible');
+      }
     });
   });
+
   document.querySelectorAll('.fade-in').forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 60) el.classList.add('visible');
+    if (el.getBoundingClientRect().top < window.innerHeight - 60) {
+      el.classList.add('visible');
+    }
   });
 
-  function submitBooking() {
-    const fname = document.getElementById('b-fname').value.trim();
-    const email = document.getElementById('b-email').value.trim();
-    const org   = document.getElementById('b-org').value.trim();
-    const svc   = document.getElementById('b-service').value;
-    if (!fname || !email || !org || !svc) {
-      alert('Please fill in all required fields (marked with *).');
-      return;
+  const params = new URLSearchParams(window.location.search);
+  const service = params.get('service');
+
+  if (service) {
+    const serviceSelect = document.getElementById('b-service');
+
+    if (serviceSelect) {
+      const normalizedService = service.trim().toLowerCase();
+
+      Array.from(serviceSelect.options).forEach(option => {
+        if (option.text.trim().toLowerCase() === normalizedService) {
+          serviceSelect.value = option.text;
+        }
+      });
     }
-    document.getElementById('booking-form').style.display = 'none';
-    document.getElementById('booking-success').style.display = 'block';
-    // TODO: Wire to real backend / Formspree / Netlify Forms
   }
 </script>
+
 </body>
 </html>
