@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — SSIK IT Consulting & Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .page-hero {
+    padding: calc(var(--nav-h) + 4.5rem) 2rem 4.5rem;
+    background: var(--off-white);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.5;
+    mask-image: radial-gradient(ellipse 60% 80% at 80% 50%, transparent 40%, black 100%);
+  }
+  .page-hero-inner { position: relative; z-index: 1; max-width: var(--max-w); margin: 0 auto; }
+  .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,3.8rem); font-weight: 700; color: var(--navy); line-height: 1.1; margin-bottom: 1rem; }
+  .page-hero p { font-size: 1rem; color: var(--slate); max-width: 560px; line-height: 1.85; }
+
+  /* NDA notice */
+  .nda-notice {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-left: 4px solid var(--navy);
+    padding: 1.25rem 1.75rem;
+    border-radius: 2px;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .nda-icon { color: var(--navy); flex-shrink: 0; margin-top: 1px; }
+  .nda-notice p { font-size: 0.88rem; color: var(--slate); line-height: 1.7; }
+  .nda-notice strong { color: var(--navy); }
+
+  /* Projects grid */
+  #projects-grid { background: var(--white); }
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  /* Blank / placeholder tile */
+  .proj-tile {
+    border: 1.5px dashed var(--border-dark);
+    background: var(--off-white);
+    border-radius: 4px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .proj-tile:hover { border-color: var(--navy); background: var(--surface); }
+  .proj-tile-num {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s;
+  }
+  .proj-tile:hover .proj-tile-num { color: var(--border-dark); }
+  .proj-tile-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--border-dark);
+    transition: color 0.3s;
+  }
+  .proj-tile:hover .proj-tile-label { color: var(--slate-light); }
+  .proj-tile-status {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold-border);
+    background: var(--gold-pale);
+    padding: 0.2rem 0.55rem;
+  }
+
+  /* Capabilities strip */
+  #capabilities { background: var(--off-white); }
+  .cap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+  .cap-item {
+    padding: 1.5rem;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    border-radius: 3px;
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+  .cap-item:hover { border-color: var(--gold-border); }
+  .cap-num { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--navy); }
+  .cap-label { font-size: 0.82rem; color: var(--slate); margin-top: 0.25rem; }
+
+  @media (max-width: 900px) { .proj-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px) { .proj-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark"><span>SS</span></div>
+    <div class="nav-logo-text">
+      <div class="nav-logo-name">SSIK</div>
+      <div class="nav-logo-sub">IT Consulting & Solutions</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="booking.html" class="btn btn-primary" style="font-size:0.78rem;padding:0.65rem 1.5rem;">Book a Consultation</a>
+  <button class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')">✕</button>
+  <a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a>
+  <a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+  <a href="booking.html" class="btn btn-primary">Book Consultation</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="section-label">Our Work</div>
+    <h1>Project Portfolio</h1>
+    <p>A growing record of engagements across cybersecurity, IT auditing, risk management, and infrastructure advisory. Case studies coming soon.</p>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects-grid" class="section">
+  <div class="container">
+    <div class="section-label">Engagements</div>
+    <h2 class="section-title">Past Projects</h2>
+    <div class="rule"></div>
+
+    <div class="nda-notice">
+      <svg class="nda-icon" width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>Confidentiality Notice:</strong> Detailed project case studies are currently being prepared. Client-specific information is protected under NDA. Full case studies will be published here upon client approval. In the meantime, please <a href="contact.html">contact us</a> for references or a portfolio discussion.</p>
+    </div>
+
+    <!--
+    ============================================================
+    CUSTOMIZE: Replace each .proj-tile with a real project card.
+    Example structure for a completed project:
+    <div class="proj-tile" style="align-items:flex-start;text-align:left;flex-direction:column;justify-content:flex-start;padding:2rem;">
+      <div class="proj-tile-status">Completed</div>
+      <div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.15em;color:var(--slate-light);margin-bottom:0.5rem;text-transform:uppercase;">Client — Industry</div>
+      <h3 style="font-family:var(--font-display);font-size:1.3rem;color:var(--navy);margin-bottom:0.6rem;">Project Title</h3>
+      <p style="font-size:0.85rem;color:var(--slate);line-height:1.7;margin-bottom:1rem;">Brief project description.</p>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        <span style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-border);padding:0.2rem 0.55rem;background:var(--gold-pale);">Tag</span>
+      </div>
+    </div>
+    ============================================================
+    -->
+
+    <div class="proj-grid">
+
+      <div class="proj-tile fade-in">
+        <div class="proj-tile-status">Coming Soon</div>
+        <div class="proj-tile-num">01</div>
+        <div class="proj-tile-label">Project Case Study</div>
+      </div>
+
+      <div class="proj-tile fade-in delay-1">
+        <div class="proj-tile-status">Coming Soon</div>
+        <div class="proj-tile-num">02</div>
+        <div class="proj-tile-label">Project Case Study</div>
+      </div>
+
+      <div class="proj-tile fade-in delay-2">
+        <div class="proj-tile-status">Coming Soon</div>
+        <div class="proj-tile-num">03</div>
+        <div class="proj-tile-label">Project Case Study</div>
+      </div>
+
+      <div class="proj-tile fade-in">
+        <div class="proj-tile-status">Coming Soon</div>
+        <div class="proj-tile-num">04</div>
+        <div class="proj-tile-label">Project Case Study</div>
+      </div>
+
+      <div class="proj-tile fade-in delay-1">
+        <div class="proj-tile-status">Coming Soon</div>
+        <div class="proj-tile-num">05</div>
+        <div class="proj-tile-label">Project Case Study</div>
+      </div>
+
+      <div class="proj-tile fade-in delay-2">
+        <div class="proj-tile-status">Coming Soon</div>
+        <div class="proj-tile-num">06</div>
+        <div class="proj-tile-label">Project Case Study</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities" class="section">
+  <div class="container">
+    <div class="section-label">At a Glance</div>
+    <h2 class="section-title">Our Capabilities</h2>
+    <div class="rule"></div>
+    <div class="cap-grid">
+      <div class="cap-item fade-in">
+        <div class="cap-num">5</div>
+        <div class="cap-label">Core Service Areas</div>
+      </div>
+      <div class="cap-item fade-in delay-1">
+        <div class="cap-num">8+</div>
+        <div class="cap-label">Years Combined Experience</div>
+      </div>
+      <div class="cap-item fade-in delay-2">
+        <div class="cap-num">4</div>
+        <div class="cap-label">Specialist Consultants</div>
+      </div>
+      <div class="cap-item fade-in delay-3">
+        <div class="cap-num">100%</div>
+        <div class="cap-label">Client Confidentiality</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--navy);padding:4.5rem 2rem;text-align:center;">
+  <div class="container">
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.6rem,3.5vw,2.5rem);color:var(--white);margin-bottom:1rem;font-weight:700;">Want to discuss our experience?</h2>
+    <p style="color:rgba(255,255,255,0.55);max-width:440px;margin:0 auto 2rem;font-size:0.95rem;">Book a free discovery call. We'd be happy to walk you through our capabilities and past engagements in detail.</p>
+    <a href="booking.html" class="btn btn-gold">Book a Free Consultation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">SSIK IT Consulting & Solutions</div>
+      <div style="font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;">Secure Solutions in Information & Knowledge</div>
+    </div>
+    <div class="footer-copy">© 2025 SSIK IT Consulting & Solutions. All rights reserved.</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li><li><a href="booking.html">Book</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 60) el.classList.add('visible');
+    });
+  });
+  document.querySelectorAll('.fade-in').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 60) el.classList.add('visible');
+  });
+</script>
+</body>
+</html>
