@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sil6428.github.io/SSIK-website/sitemap.xml

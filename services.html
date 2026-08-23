@@ -4,7 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services — SSIK IT Consulting & Solutions</title>
-<meta name="description" content="Explore SSIK services for security auditing, authorized testing, cyber risk management, infrastructure reviews, and IT policy advisory.">
+<meta name="description" content="Explore SSIK services for security baseline reviews, cyber risk, infrastructure documentation, improvement planning, and IT policy advisory.">
+<link rel="canonical" href="https://sil6428.github.io/SSIK-website/services.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0f1e3d">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SSIK IT Consulting & Solutions">
+<meta property="og:title" content="Services | SSIK IT Consulting & Solutions">
+<meta property="og:description" content="Focused security, risk, infrastructure, and IT advisory services.">
+<meta property="og:url" content="https://sil6428.github.io/SSIK-website/services.html">
+<meta property="og:image" content="https://sil6428.github.io/SSIK-website/assets/ssik-social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sil6428.github.io/SSIK-website/assets/ssik-social-card.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
@@ -174,7 +190,7 @@
 
   .process-steps {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     gap: 0;
     margin-top: 3rem;
     position: relative;
@@ -265,7 +281,7 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
 
-  <a href="booking.html" class="btn btn-primary" style="font-size:0.78rem;padding:0.65rem 1.5rem;">Book a Consultation</a>
+  <a href="booking.html" class="btn btn-primary" style="font-size:0.78rem;padding:0.65rem 1.5rem;">Request a Consultation</a>
 
   <button class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -273,13 +289,13 @@
 </nav>
 
 <div class="mobile-menu">
-  <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')">✕</button>
+  <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')" aria-label="Close menu">✕</button>
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="about.html">About</a>
   <a href="projects.html">How We Help</a>
   <a href="contact.html">Contact</a>
-  <a href="booking.html" class="btn btn-primary">Book Consultation</a>
+  <a href="booking.html" class="btn btn-primary">Request Consultation</a>
 </div>
 
 <div class="page-hero">
@@ -287,7 +303,7 @@
   <div class="page-hero-inner">
     <div class="section-label">What We Offer</div>
     <h1>Our Services</h1>
-    <p>SSIK provides focused IT consulting and cybersecurity services designed for organizations that take information security seriously. Every engagement is scoped to your specific needs.</p>
+    <p>SSIK provides focused advisory and review services for organizations improving their cybersecurity and IT foundations. Every engagement is defined through a written scope before work begins.</p>
   </div>
 </div>
 
@@ -299,78 +315,69 @@
 <section class="services-main section">
   <div class="container">
     <div class="section-label">Services</div>
-    <h2 class="section-title">Specialized Engagements</h2>
+    <h2 class="section-title">Focused Advisory Services</h2>
     <div class="rule"></div>
+
+    <p class="section-sub" style="margin-bottom:2rem;">
+      SSIK's current public offering excludes penetration testing and formal certification audits. We focus on practical reviews, documentation, risk visibility, and improvement planning.
+    </p>
 
     <div class="svc-grid">
 
       <div class="svc-card fade-in">
-        <div class="svc-card-num">01 — Security Auditing</div>
-        <h3>IT Security Auditing</h3>
-        <p>Comprehensive security assessments that identify vulnerabilities, evaluate existing controls, and produce a prioritized remediation roadmap.</p>
+        <div class="svc-card-num">01 — Security Baseline</div>
+        <h3>Security Baseline Review</h3>
+        <p>A non-intrusive review of current safeguards, access practices, exposed services, and documented security processes.</p>
         <ul class="svc-deliverables">
-          <li>Network and endpoint security review</li>
-          <li>Access control and privilege analysis</li>
-          <li>Security control gap assessment</li>
-          <li>Executive-ready findings report</li>
+          <li>Current-state security summary</li>
+          <li>Access and account-practice review</li>
+          <li>Control and documentation gaps</li>
+          <li>Prioritized improvement roadmap</li>
         </ul>
-        <a href="booking.html?service=IT%20Security%20Auditing" class="quote-tag">Request a Quote →</a>
+        <a href="booking.html?service=Security%20Baseline%20Review" class="quote-tag">Discuss This Service →</a>
       </div>
 
       <div class="svc-card fade-in delay-1">
-        <div class="svc-card-num">02 — Penetration Testing</div>
-        <h3>Penetration Testing</h3>
-        <p>Controlled testing to uncover security weaknesses before attackers can exploit them, with clear findings and practical next steps.</p>
+        <div class="svc-card-num">02 — Risk & Controls</div>
+        <h3>Cyber Risk & Control Review</h3>
+        <p>Structured identification of technology risks, affected business processes, existing safeguards, and realistic treatment options.</p>
         <ul class="svc-deliverables">
-          <li>External and internal testing options</li>
-          <li>Web application security testing</li>
-          <li>Risk-rated vulnerability findings</li>
-          <li>Remediation guidance and retesting options</li>
+          <li>Risk register development</li>
+          <li>Impact and likelihood assessment</li>
+          <li>Existing-control review</li>
+          <li>Risk treatment priorities</li>
         </ul>
-        <a href="booking.html?service=Penetration%20Testing" class="quote-tag">Request a Quote →</a>
+        <a href="booking.html?service=Cyber%20Risk%20%26%20Control%20Review" class="quote-tag">Discuss This Service →</a>
       </div>
 
       <div class="svc-card fade-in delay-2">
-        <div class="svc-card-num">03 — Risk Management</div>
-        <h3>Risk Management</h3>
-        <p>Structured risk identification and mitigation planning aligned with your operations, compliance goals, and business priorities.</p>
+        <div class="svc-card-num">03 — Infrastructure</div>
+        <h3>Infrastructure Review & Documentation</h3>
+        <p>Practical documentation and planning support for networks, systems, identity services, backups, and operational dependencies.</p>
         <ul class="svc-deliverables">
-          <li>Risk register development</li>
-          <li>Threat and impact assessment</li>
-          <li>Mitigation planning</li>
-          <li>Policy and governance recommendations</li>
+          <li>System and network inventory</li>
+          <li>Dependency and data-flow mapping</li>
+          <li>Backup and resilience review</li>
+          <li>Phased improvement plan</li>
         </ul>
-        <a href="booking.html?service=Risk%20Management" class="quote-tag">Request a Quote →</a>
+        <a href="booking.html?service=Infrastructure%20Review%20%26%20Documentation" class="quote-tag">Discuss This Service →</a>
       </div>
 
       <div class="svc-card fade-in">
-        <div class="svc-card-num">04 — Infrastructure Consulting</div>
-        <h3>Infrastructure Consulting</h3>
-        <p>Practical architecture and modernization guidance for secure, reliable, and scalable IT environments.</p>
+        <div class="svc-card-num">04 — Policy & Advisory</div>
+        <h3>Security Policy & IT Advisory</h3>
+        <p>Plain-language policies and advisory support aligned with the organization's actual systems, people, and operating needs.</p>
         <ul class="svc-deliverables">
-          <li>Network and systems architecture review</li>
-          <li>Cloud and hybrid environment guidance</li>
-          <li>Availability and resilience planning</li>
-          <li>Infrastructure improvement roadmap</li>
+          <li>Acceptable-use and access policies</li>
+          <li>Account and data-handling guidance</li>
+          <li>Incident-response documentation</li>
+          <li>Stakeholder-ready recommendations</li>
         </ul>
-        <a href="booking.html?service=Infrastructure%20Consulting" class="quote-tag">Request a Quote →</a>
+        <a href="booking.html?service=Security%20Policy%20%26%20IT%20Advisory" class="quote-tag">Discuss This Service →</a>
       </div>
 
       <div class="svc-card fade-in delay-1">
-        <div class="svc-card-num">05 — Policy & Advisory</div>
-        <h3>IT Policy & Advisory</h3>
-        <p>Clear policies, governance support, and advisory services that help your organization operate more securely and consistently.</p>
-        <ul class="svc-deliverables">
-          <li>Security policy creation and review</li>
-          <li>Acceptable use and access policies</li>
-          <li>Incident response planning</li>
-          <li>Leadership advisory and documentation</li>
-        </ul>
-        <a href="booking.html?service=IT%20Policy%20%26%20Advisory" class="quote-tag">Request a Quote →</a>
-      </div>
-
-      <div class="svc-card fade-in delay-2">
-        <div class="svc-card-num">06 — Unsure Where to Start?</div>
+        <div class="svc-card-num">05 — Unsure Where to Start?</div>
         <h3>Free Consultation</h3>
         <p>Not sure which service fits your needs? Book a free consultation and we’ll help identify the right next step.</p>
         <ul class="svc-deliverables">
@@ -379,7 +386,7 @@
           <li>Initial needs assessment</li>
           <li>Recommended next steps</li>
         </ul>
-        <a href="booking.html?service=Multiple%20Services%20%2F%20Not%20Sure" class="quote-tag">Book Free Consultation →</a>
+        <a href="booking.html?service=Multiple%20Services%20%2F%20Not%20Sure" class="quote-tag">Request Free Consultation →</a>
       </div>
 
     </div>
@@ -401,20 +408,26 @@
 
       <div class="step fade-in delay-1">
         <div class="step-circle">02</div>
-        <h4>Scope</h4>
-        <p>We define the work, timeline, deliverables, and pricing clearly.</p>
+        <h4>Written Scope</h4>
+        <p>We document the boundaries, deliverables, timeline, responsibilities, and price.</p>
       </div>
 
       <div class="step fade-in delay-2">
         <div class="step-circle">03</div>
-        <h4>Execute</h4>
-        <p>We complete the engagement using a structured and confidential approach.</p>
+        <h4>Authorize</h4>
+        <p>Work starts only after both parties approve the scope and required access in writing.</p>
       </div>
 
       <div class="step fade-in delay-3">
         <div class="step-circle">04</div>
-        <h4>Deliver</h4>
-        <p>You receive clear findings, recommendations, and practical next steps.</p>
+        <h4>Review & Deliver</h4>
+        <p>We complete the agreed review and explain the findings, limits, and priorities.</p>
+      </div>
+
+      <div class="step fade-in">
+        <div class="step-circle">05</div>
+        <h4>Follow Up</h4>
+        <p>We answer questions and review progress against the agreed remediation plan.</p>
       </div>
     </div>
   </div>
@@ -424,10 +437,10 @@
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
     <div>
       <div class="section-label" style="color:var(--gold);">Ready to Begin?</div>
-      <h2 class="section-title" style="color:var(--white);margin-bottom:0.5rem;">Book Your Free Consultation</h2>
-      <p style="color:rgba(255,255,255,0.65);max-width:560px;">Tell us what you need help with and we’ll respond within one business day.</p>
+      <h2 class="section-title" style="color:var(--white);margin-bottom:0.5rem;">Request a Free Consultation</h2>
+      <p style="color:rgba(255,255,255,0.65);max-width:560px;">Tell us what you need help with and we’ll aim to reply within one business day.</p>
     </div>
-    <a href="booking.html?service=Multiple%20Services%20%2F%20Not%20Sure" class="btn btn-gold">Book Now →</a>
+    <a href="booking.html?service=Multiple%20Services%20%2F%20Not%20Sure" class="btn btn-gold">Request Consultation →</a>
   </div>
 </section>
 
@@ -444,8 +457,11 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="projects.html">How We Help</a></li>
-      <li><a href="booking.html">Book</a></li>
+      <li><a href="booking.html">Consultation</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="security.html">Security</a></li>
     </ul>
   </div>
 </footer>

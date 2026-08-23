@@ -71,7 +71,7 @@
       addLine(lines, 'Organization size', fieldValue(bookingForm, 'organization_size'));
       addLine(lines, 'Industry', fieldValue(bookingForm, 'industry'));
       addLine(lines, 'Service of interest', service);
-      addLine(lines, 'Preferred date', fieldValue(bookingForm, 'preferred_date'));
+      addLine(lines, 'Preferred contact window', fieldValue(bookingForm, 'preferred_window'));
       lines.push('', 'Additional context:', fieldValue(bookingForm, 'message') || 'No additional context provided.', '', 'Thank you.');
 
       const subjectDetails = [service, organization].filter(Boolean).join(' - ');
