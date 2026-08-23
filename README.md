@@ -23,9 +23,10 @@ Public website for SSIK, an IT and cybersecurity consulting business co-founded 
 - `index.html` - company overview and services preview
 - `services.html` - consulting service details
 - `about.html` - company story, co-founders, values, and approach
-- `projects.html` - project and engagement examples
-- `booking.html` - consultation request flow
-- `contact.html` - contact information and inquiry form
+- `projects.html` - honest example service scenarios under the public label “How We Help”; no client work is implied
+- `booking.html` - consultation request form that prepares a reviewable email draft without a paid form backend
+- `contact.html` - contact information and inquiry form that prepares a reviewable email draft
+- `contact-mail.js` - shared contact and consultation email-draft logic
 - `shared.css` - shared visual system and responsive styling
 
 The site is built with static HTML, CSS, and JavaScript and published through GitHub Pages.

@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book a Free Consultation — SSIK IT Consulting & Solutions</title>
+<meta name="description" content="Request a free SSIK consultation about IT security, cyber risk, infrastructure, testing, or policy needs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<script src="contact-mail.js" defer></script>
 <style>
   .page-hero {
     padding: calc(var(--nav-h) + 4.5rem) 2rem 4.5rem;
@@ -176,7 +178,7 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
+    <li><a href="projects.html">How We Help</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 
@@ -192,7 +194,7 @@
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
+  <a href="projects.html">How We Help</a>
   <a href="contact.html">Contact</a>
   <a href="booking.html" class="btn btn-primary">Book Consultation</a>
 </div>
@@ -202,7 +204,7 @@
   <div class="page-hero-inner">
     <div class="section-label">Get Started</div>
     <h1>Book a Free Consultation</h1>
-    <p>Schedule a complimentary discovery call with SSIK. No obligation — just a focused conversation about your IT security, risk, infrastructure, or advisory needs.</p>
+    <p>Request a complimentary discovery call with SSIK. No obligation — just a focused conversation about your IT security, risk, infrastructure, or advisory needs.</p>
     <div class="free-consultation-tag">Free Consultation Available</div>
   </div>
 </div>
@@ -231,38 +233,34 @@
 
       <div class="fade-in delay-1">
         <div class="form-card">
-          <form action="https://formsubmit.co/ssiksolutions@gmail.com" method="POST">
-
-            <input type="hidden" name="_subject" value="New Booking Request - SSIK Solutions">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
+          <form id="booking-form">
 
             <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--navy);margin-bottom:1.75rem;font-weight:700;">Booking Request</div>
 
             <div class="form-row">
               <div class="form-group">
                 <label for="b-fname">First Name *</label>
-                <input type="text" id="b-fname" name="first_name" placeholder="Jane" required>
+                <input type="text" id="b-fname" name="first_name" placeholder="Jane" autocomplete="given-name" required>
               </div>
               <div class="form-group">
                 <label for="b-lname">Last Name *</label>
-                <input type="text" id="b-lname" name="last_name" placeholder="Smith" required>
+                <input type="text" id="b-lname" name="last_name" placeholder="Smith" autocomplete="family-name" required>
               </div>
             </div>
 
             <div class="form-group">
               <label for="b-email">Business Email *</label>
-              <input type="email" id="b-email" name="email" placeholder="jane@company.com" required>
+              <input type="email" id="b-email" name="email" placeholder="jane@company.com" autocomplete="email" required>
             </div>
 
             <div class="form-group">
               <label for="b-phone">Phone Number</label>
-              <input type="tel" id="b-phone" name="phone" placeholder="647-309-1927">
+              <input type="tel" id="b-phone" name="phone" placeholder="647-309-1927" autocomplete="tel">
             </div>
 
             <div class="form-group">
               <label for="b-org">Organization *</label>
-              <input type="text" id="b-org" name="organization" placeholder="Company / Organization Name" required>
+              <input type="text" id="b-org" name="organization" placeholder="Company / Organization Name" autocomplete="organization" required>
             </div>
 
             <div class="form-row">
@@ -317,9 +315,14 @@
               <textarea id="b-notes" name="message" placeholder="Briefly describe your current IT challenges or what you're hoping to achieve..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary form-submit">Submit Booking Request →</button>
+            <button type="submit" class="btn btn-primary form-submit">Prepare Booking Email →</button>
 
-            <p class="form-note">By submitting, you agree to be contacted by SSIK Solutions. We never share your information.</p>
+            <p class="form-note">
+              This opens a prepared draft in your email app so you can review and send it.
+              If no app opens, email <a href="mailto:ssiksolutions@gmail.com">ssiksolutions@gmail.com</a> directly.
+              Do not include passwords or sensitive system details.
+            </p>
+            <p class="form-status" id="booking-form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -335,12 +338,12 @@
       <div style="font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;">Secure Solutions in Information & Knowledge</div>
     </div>
 
-    <div class="footer-copy">© 2025 SSIK IT Consulting & Solutions. All rights reserved.</div>
+    <div class="footer-copy">© 2026 SSIK IT Consulting & Solutions. All rights reserved.</div>
 
     <ul class="footer-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="projects.html">How We Help</a></li>
       <li><a href="booking.html">Book</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>

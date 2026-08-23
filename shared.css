@@ -489,6 +489,21 @@ select {
   margin-top: 1rem;
 }
 
+.form-note a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.form-status {
+  min-height: 1.5em;
+  margin-top: 0.75rem;
+  color: var(--navy);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
 /* ============================================================
    Footer
 ============================================================ */

@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — SSIK IT Consulting & Solutions</title>
+<meta name="description" content="Contact SSIK with a general question or prepare an email inquiry about IT and cybersecurity consulting services.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<script src="contact-mail.js" defer></script>
 
 <style>
   .page-hero {
@@ -143,6 +145,10 @@
   }
 
   .faq-q {
+    width: 100%;
+    border: 0;
+    text-align: left;
+    font-family: var(--font-body);
     padding: 1.25rem 1.75rem;
     cursor: pointer;
     display: flex;
@@ -212,7 +218,7 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
+    <li><a href="projects.html">How We Help</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
 
@@ -228,7 +234,7 @@
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
+  <a href="projects.html">How We Help</a>
   <a href="contact.html">Contact</a>
   <a href="booking.html" class="btn btn-primary">Book Consultation</a>
 </div>
@@ -238,7 +244,7 @@
   <div class="page-hero-inner">
     <div class="section-label">Reach Us</div>
     <h1>Contact</h1>
-    <p>Whether you have a quick question or are ready to begin an engagement, our team is here. We respond to all inquiries within one business day.</p>
+    <p>Whether you have a quick question or are ready to discuss an engagement, our team is here. We aim to reply within one business day.</p>
   </div>
 </div>
 
@@ -252,7 +258,7 @@
         <div class="rule"></div>
 
         <p>
-          Reach out directly using the details below, or use the contact form and we'll be in touch promptly.
+          Reach out directly using the details below, or use the form to prepare a complete inquiry in your email app.
           For new project inquiries, consider
           <a href="booking.html" style="color:var(--gold);font-weight:500;">booking a free consultation</a>
           directly.
@@ -292,8 +298,8 @@
           <div class="contact-item-text">
             <h4>Location</h4>
             <p>
-              Toronto, Ontario, Canada<br>
-              <span style="font-size:0.82rem;color:var(--slate-light);">Serving clients nationally & internationally</span>
+              Ontario, Canada<br>
+              <span style="font-size:0.82rem;color:var(--slate-light);">Remote consultations available</span>
             </p>
           </div>
         </div>
@@ -306,41 +312,37 @@
           </div>
           <div class="contact-item-text">
             <h4>Response Time</h4>
-            <p>Within 1 business day</p>
+            <p>We aim to reply within 1 business day</p>
           </div>
         </div>
       </div>
 
       <div class="fade-in delay-1">
         <div class="form-card">
-          <form action="https://formsubmit.co/ssiksolutions@gmail.com" method="POST">
-
-            <input type="hidden" name="_subject" value="New Contact Request - SSIK Solutions">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
+          <form id="contact-form">
 
             <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--navy);margin-bottom:1.75rem;font-weight:700;">Send a Message</div>
 
             <div class="form-row">
               <div class="form-group">
                 <label for="c-name">Full Name *</label>
-                <input type="text" id="c-name" name="name" placeholder="Jane Smith" required>
+                <input type="text" id="c-name" name="name" placeholder="Jane Smith" autocomplete="name" required>
               </div>
 
               <div class="form-group">
                 <label for="c-email">Email *</label>
-                <input type="email" id="c-email" name="email" placeholder="jane@company.com" required>
+                <input type="email" id="c-email" name="email" placeholder="jane@company.com" autocomplete="email" required>
               </div>
             </div>
 
             <div class="form-group">
               <label for="c-phone">Phone Number</label>
-              <input type="tel" id="c-phone" name="phone" placeholder="647-309-1927">
+              <input type="tel" id="c-phone" name="phone" placeholder="647-309-1927" autocomplete="tel">
             </div>
 
             <div class="form-group">
               <label for="c-company">Organization</label>
-              <input type="text" id="c-company" name="organization" placeholder="Company / Organization Name">
+              <input type="text" id="c-company" name="organization" placeholder="Company / Organization Name" autocomplete="organization">
             </div>
 
             <div class="form-group">
@@ -363,9 +365,14 @@
               <textarea id="c-message" name="message" placeholder="Tell us how we can help..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary form-submit">Send Message →</button>
+            <button type="submit" class="btn btn-primary form-submit">Prepare Email →</button>
 
-            <p class="form-note">Your request will be sent directly to SSIK Solutions. We never share your information.</p>
+            <p class="form-note">
+              This opens a prepared draft in your email app so you can review and send it.
+              If no app opens, email <a href="mailto:ssiksolutions@gmail.com">ssiksolutions@gmail.com</a> directly.
+              Do not include passwords or sensitive system details.
+            </p>
+            <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -383,40 +390,40 @@
     <div class="faq-list">
 
       <div class="faq-item">
-        <div class="faq-q">
+        <button type="button" class="faq-q" aria-expanded="false">
           <span>Is the consultation really free?</span>
           <span class="faq-arrow">⌄</span>
-        </div>
+        </button>
         <div class="faq-a">
           Yes. The initial consultation is free and designed to understand your needs before any paid engagement is proposed.
         </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-q">
+        <button type="button" class="faq-q" aria-expanded="false">
           <span>How quickly will SSIK respond?</span>
           <span class="faq-arrow">⌄</span>
-        </div>
+        </button>
         <div class="faq-a">
           We aim to respond to all inquiries within one business day.
         </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-q">
+        <button type="button" class="faq-q" aria-expanded="false">
           <span>Can you work with small businesses?</span>
           <span class="faq-arrow">⌄</span>
-        </div>
+        </button>
         <div class="faq-a">
           Yes. SSIK supports organizations of different sizes, from small businesses to larger teams that need security, risk, infrastructure, or policy support.
         </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-q">
+        <button type="button" class="faq-q" aria-expanded="false">
           <span>Are discussions confidential?</span>
           <span class="faq-arrow">⌄</span>
-        </div>
+        </button>
         <div class="faq-a">
           Yes. We treat all client conversations and project details confidentially.
         </div>
@@ -433,12 +440,12 @@
       <div style="font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;">Secure Solutions in Information & Knowledge</div>
     </div>
 
-    <div class="footer-copy">© 2025 SSIK IT Consulting & Solutions. All rights reserved.</div>
+    <div class="footer-copy">© 2026 SSIK IT Consulting & Solutions. All rights reserved.</div>
 
     <ul class="footer-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="projects.html">How We Help</a></li>
       <li><a href="booking.html">Book</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -464,7 +471,8 @@
 
   document.querySelectorAll('.faq-q').forEach(question => {
     question.addEventListener('click', () => {
-      question.parentElement.classList.toggle('open');
+      const isOpen = question.parentElement.classList.toggle('open');
+      question.setAttribute('aria-expanded', String(isOpen));
     });
   });
 </script>
