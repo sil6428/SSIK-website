@@ -6,8 +6,9 @@ Public website for SSIK, an IT and cybersecurity consulting business co-founded 
 
 ## Co-founders
 
-- **Affan Shaikh:** Co-founder, consulting-team member, and website developer. Affan independently designed, built, published, and maintains the six-page public website and its GitHub Pages deployment.
-- **Ghayas Sher:** Co-founder focused on security-control assessment, privacy and regulatory research, and stakeholder-ready risk documentation.
+- **Shared responsibilities:** Affan and Ghayas jointly handle consulting work, security-control assessment, privacy and regulatory research, and translating findings into stakeholder-ready recommendations.
+- **Affan Shaikh:** In addition to the shared co-founder responsibilities, Affan independently designed, built, published, and maintains the six-page public website and its GitHub Pages deployment.
+- **Ghayas Sher:** Holds the same co-founder, consulting, security-assessment, privacy-research, and stakeholder-communication responsibilities as Affan.
 
 ## Services presented
 
