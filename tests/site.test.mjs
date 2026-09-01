@@ -33,6 +33,9 @@ test('every page has current navigation, sharing metadata, policy links, and cop
   for (const page of pages) {
     const html = read(page);
     assert.match(html, /<meta name="description" content="[^"]+">/);
+    assert.match(html, /http-equiv="Content-Security-Policy"/);
+    assert.match(html, /object-src 'none'/);
+    assert.match(html, /<meta name="referrer" content="strict-origin-when-cross-origin">/);
     assert.match(html, /<link rel="canonical" href="https:\/\/sil6428\.github\.io\/SSIK-website\/[^"]+">/);
     assert.match(html, /<link rel="icon" type="image\/png" sizes="32x32" href="assets\/favicon-32\.png">/);
     assert.match(html, /<meta property="og:image" content="https:\/\/sil6428\.github\.io\/SSIK-website\/assets\/ssik-social-card\.png">/);
